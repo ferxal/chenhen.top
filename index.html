@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>欢迎来到我的小站</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', Arial, 'PingFang SC', 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9ff;
+            background-image: url('https://proxy.chenhen.top/https://i.pximg.net/img-original/img/2023/08/21/05/01/09/111024784_p0.png');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(164, 180, 248, 0.15) 0%, rgba(199, 150, 238, 0.15) 100%);
+            backdrop-filter: blur(5px);
+            z-index: 0;
+        }
+        
+        .container {
+            max-width: 800px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.92);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(118, 126, 223, 0.2);
+            overflow: hidden;
+            position: relative;
+            z-index: 1;
+            padding: 40px;
+            text-align: center;
+        }
+        
+        .anime-character {
+            width: 180px;
+            height: 180px;
+            margin: 0 auto 25px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, #8bb9ff, #c6a2f0);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 100px;
+            box-shadow: 0 8px 20px rgba(118, 126, 223, 0.3);
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .anime-character::before {
+            content: '≧◡≦';
+            position: relative;
+            z-index: 2;
+        }
+        
+        .anime-character::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, transparent 40%, rgba(255, 255, 255, 0.3) 50%, transparent 60%);
+            animation: shine 4s infinite linear;
+        }
+        
+        .message {
+            font-size: 28px;
+            color: #5a4b6c;
+            margin-bottom: 30px;
+            line-height: 1.5;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .message::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(to right, #8bb9ff, #c6a2f0);
+            border-radius: 3px;
+        }
+        
+        .author {
+            font-size: 22px;
+            font-weight: 600;
+            color: #8b5cf6;
+            margin-top: 35px;
+            padding: 12px 25px;
+            background: linear-gradient(90deg, #f1f5ff 0%, #f4eeff 100%);
+            border-radius: 12px;
+            display: inline-block;
+            box-shadow: 0 4px 12px rgba(139, 92, 246, 0.15);
+            border: 1px solid rgba(139, 92, 246, 0.1);
+        }
+        
+        .hint {
+            margin-top: 25px;
+            font-size: 16px;
+            color: #7a7f9a;
+            opacity: 0.8;
+        }
+        
+        @keyframes shine {
+            0% { transform: translateX(-100%); }
+            20% { transform: translateX(100%); }
+            100% { transform: translateX(100%); }
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .anime-character {
+            animation: float 5s ease-in-out infinite;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px 20px;
+            }
+            
+            .anime-character {
+                width: 150px;
+                height: 150px;
+                font-size: 80px;
+            }
+            
+            .message {
+                font-size: 24px;
+            }
+            
+            .author {
+                font-size: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="anime-character"></div>
+        
+        <h1 class="message">你访问这里干嘛~？ (¬‿¬)</h1>
+        
+        <div class="author">By chenHen</div>
+        
+        <p class="hint">页面正在建设中，精彩内容即将上线...</p>
+    </div>
+
+    <script>
+        // 添加一些简单的交互效果
+        document.addEventListener('DOMContentLoaded', function() {
+            const message = document.querySelector('.message');
+            
+            message.addEventListener('mouseover', function() {
+                this.style.transform = 'scale(1.02)';
+                this.style.transition = 'transform 0.3s ease';
+            });
+            
+            message.addEventListener('mouseout', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+</body>
+</html>
